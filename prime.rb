@@ -1,13 +1,13 @@
-def prime?(num)
-  if num <= 0 ||  num == 1
+def prime?(n)
+  if n <= 1
     return false
-  else
-    arr = (2..num-1).to_a.reverse
   end
-  arr.each do |divisor|
-    if num % divisor == 0
+  i = 2
+  while i < n
+    if n % i == 0
       return false
     end
+    i+=1
   end
-  return true
+  true
 end
