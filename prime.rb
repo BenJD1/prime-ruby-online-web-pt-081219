@@ -1,4 +1,3 @@
-# Add  code here! 
 def prime?(number)
   array=(2..number).to_a
   new_array=[]
