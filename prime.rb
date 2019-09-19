@@ -1,16 +1,46 @@
-def prime?(number)
-  array=(2..number).to_a
-  new_array=[]
-  array.each do |num|
-    modulo=number%num
-    if modulo==0
-      new_array <<num
-    end
-  end
-  if new_array==[number]
+# def prime?(n)
+
+#   if n <= 1
+#         return false
+#   end
+
+#   i = 2
+#   # return n = Math.sqrt(n).floor
+#     while i < n
+#       if(n % i == 0)
+
+#       return false
+#       i += 1
+#     end
+
+#       return true
+#     end
+# end
+
+
+# function isPrime(num){
+#   for(var i = 2; i < num; i++){
+#      if(num % i === 0){
+#            return false;
+#      }
+#   }
+#   return true;
+# }
+
+def prime?(n)
+  if n <= 1
+    return false
+  elsif  n <= 3
     return true
-  else
+  elsif  n % 2 == 0 || n % 3 == 0
     return false
   end
+
+  for counter in 2..Math.sqrt(n) 
+    if n % counter == 0
+      return false
+      counter += 1
+  end
+  return true
 end
-prime?(13)
+end 
