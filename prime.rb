@@ -1,14 +1,13 @@
 def prime?(num)
-  if num == 0 || num == 1
+  if num <= 0 ||  num == 1
     return false
+  else
+    arr = (2..num-1).to_a.reverse
   end
-  test_factor = num - 1
-  while test_factor > 1
-    quotient = num.to_f / test_factor
-    if quotient == quotient.floor
+  arr.each do |divisor|
+    if num % divisor == 0
       return false
     end
-    test_factor -= 1
   end
-  true
-end 
+  return true
+end
